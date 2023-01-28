@@ -28,7 +28,7 @@ public class MovieRepository {
     public  String addMovieDirectorPair(String movieName, String directorName) {
         if (!movieMap.containsKey(movieName)) return "Movie Not Found";
         if (!directorMap.containsKey(directorName)) return "Director Not Found";
-        if (!movieDirectorPairMap.containsKey(directorName)) movieDirectorPairMap.get(directorName).add(movieName);
+        if (movieDirectorPairMap.containsKey(directorName)) movieDirectorPairMap.get(directorName).add(movieName);
         else {
             movieDirectorPairMap.put(directorName, new ArrayList<>(Arrays.asList(movieName)));
         }
